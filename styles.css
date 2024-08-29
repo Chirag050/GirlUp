@@ -45,7 +45,7 @@ body, html {
 
 /* Register Button Specific Styling */
 .navbar a[href="#register"] {
-    border: 2px solid #007bff; /* Nice blue border */
+    border: 2px solid #2a7cac; /* Nice blue border */
     border-radius: 25px; /* Rounded edges */
     padding: 10px 20px; /* Padding for a button-like appearance */
     color: #007bff; /* Matching blue text color */
