@@ -208,18 +208,17 @@ body, html {
 }
 
 /* Textbox content styling */
-.textbox:nth-child(1n) {
-    background-color: #83f0c3; /* Pastel green */
+.textbox:nth-of-type(1) {
+    background-color: #ffddc1; /* Pastel orange */
 }
 
-.textbox:nth-child(2n) {
-    background-color: #a1f590; /* Pastel green */
+.textbox:nth-of-type(2) {
+    background-color: #caffbf; /* Pastel green */
 }
 
-.textbox:nth-child(3n) {
-    background-color: #f0d6a4; /* Pastel yellow */
+.textbox:nth-of-type(3) {
+    background-color: #ffd3b6; /* Pastel yellow */
 }
-
 .textbox img {
     max-width: 500px; /* Increased size of images for better visibility */
     border-radius: 10px;
