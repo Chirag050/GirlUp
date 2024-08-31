@@ -14,6 +14,7 @@ body, html {
     top: -6%;
     left: -4%;
     z-index: 1000;
+    transition: opacity 0.3s ease;
 }
 
 .logo img {
@@ -24,11 +25,7 @@ body, html {
 /* Adjusted Logo Position for Small Screens */
 @media (max-width: 576px) {
     .logo {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0.8;
-        filter: brightness(1.5); /* Make the logo brighter */
+        display: none; /* Hide the logo on small screens */
     }
 }
 
@@ -149,7 +146,7 @@ body, html {
     flex-direction: column;
     background-size: cover; /* For background images */
     background-position: center; /* Center the background image */
-    background-attachment: scroll; /* Try scroll instead of fixed */
+    background-attachment: fixed; /* Try scroll instead of fixed */
     position: relative;
     overflow: auto; /* Make content scrollable */
     }
@@ -228,7 +225,6 @@ body, html {
     flex: 1;
     text-align: left;
 }
-
 
 /* Center the textboxes in their sections */
 .section {
