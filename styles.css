@@ -149,11 +149,11 @@ body, html {
     flex-direction: column;
     background-size: cover; /* For background images */
     background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Fixed background image */
+    background-attachment: scroll; /* Try scroll instead of fixed */
     position: relative;
     overflow: auto; /* Make content scrollable */
-}
-
+    }
+    
 /* Background colors in increasing order */
 .section-events {
     background-image: url('2.jpg'); /* Replace with your image URL */
