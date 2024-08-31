@@ -17,14 +17,18 @@ body, html {
 }
 
 .logo img {
-    max-height: 30vh; /* Adjust based on your logo size */
+    max-height: 30vh;
+    /* Adjust based on your logo size */
 }
 
 /* Adjusted Logo Position for Small Screens */
 @media (max-width: 576px) {
     .logo {
-        top: -10%;
-        left: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+        filter: brightness(1.5); /* Make the logo brighter */
     }
 }
 
@@ -43,20 +47,45 @@ body, html {
 
 .navbar a {
     text-decoration: none;
-    color: #000000;
+    color: #e7b985;
     padding: 10px;
     font-weight: bold;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .navbar a:hover {
-    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+    text-shadow: 0 0 10px rgba(161, 49, 196, 0.8);
 }
 
 /* Remove Navbar Background for Laptops & Computers */
 @media (min-width: 992px) {
     .navbar {
         background-color: transparent;
+    }
+
+    .navbar a[href="#register"] {
+        color: #007bff; /* Blue color for register button on desktop */
+    }
+}
+
+/* Navbar Adjustment for Phones */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(211, 211, 211, 0.5);
+        z-index: 1002;
+    }
+
+    .navbar a {
+        color: #000000;
+    }
+
+    .navbar a[href="#register"] {
+        color: #007bff;
     }
 }
 
@@ -66,13 +95,20 @@ body, html {
     height: 100vh;
 }
 
+/* Add padding-top only for small screens */
+@media (max-width: 768px) {
+    .landing-split {
+        padding-top: 70px; /* Adjust this value based on your navbar height */
+    }
+}
+
 /* Left Split for Quote */
 .split-left {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ccc8c8;
+    background-color: #f5d1a9;
     padding: 20px;
     text-align: center;
 }
@@ -81,20 +117,24 @@ body, html {
     font-size: 3em;
     margin: 0;
     line-height: 1.2;
+    text-align: left;
 }
 
-.split-left p {
+.split-left pre {
     font-size: 1.5em;
-    margin-top: 10px;
+    margin-top: 0px;
     position: relative;
     top: 150px;
     right: 50px;
+    font-family: Poppins;
 }
 
 /* Right Split for Image */
 .split-right {
     width: 50%;
     background-image: url('Right.jpg');
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.55); /* Add shading effect */
     background-size: cover;
     background-position: center;
 }
@@ -116,14 +156,14 @@ body, html {
 
 /* Background colors in increasing order */
 .section-events {
-    background-image: url('1.jpg'); /* Replace with your image URL */
+    background-image: url('2.jpg'); /* Replace with your image URL */
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, 0.5); /* Add shading effect */
     display: block;
 }
 
 .section-projects {
-    background-image: url('2.jpg'); /* Replace with your image URL */
+    background-image: url('1.jpg'); /* Replace with your image URL */
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, 0.5); /* Add shading effect */
     display: block;
@@ -152,30 +192,51 @@ body, html {
 
 /* Textbox Styling */
 .textbox {
-    background-color: #ffffff;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 90%; /* Textboxes are centered and not fully extended */
-    max-width: 800px; /* Limit the width */
+    max-width: 1000px; /* Limit the width */
     display: flex;
     align-items: center;
     gap: 20px;
     margin: 0 auto;
-    opacity: 0;
-    transform: translateY(50px);
+    opacity: 1; /* Set opacity to 1 to make textboxes visible */
+    transform: translateY(0); /* Remove the translation to keep them in place */
+    z-index: 1000;
     transition: opacity 1s ease, transform 1s ease;
 }
 
 /* Textbox content styling */
+.textbox:nth-child(1n) {
+    background-color: #83f0c3; /* Pastel green */
+}
+
+.textbox:nth-child(2n) {
+    background-color: #a1f590; /* Pastel green */
+}
+
+.textbox:nth-child(3n) {
+    background-color: #f0d6a4; /* Pastel yellow */
+}
+
 .textbox img {
-    max-width: 150px;
+    max-width: 500px; /* Increased size of images for better visibility */
     border-radius: 10px;
 }
 
 .textbox-content {
     flex: 1;
     text-align: left;
+}
+
+
+/* Center the textboxes in their sections */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Added to center items in a column */
 }
 
 /* Tally Form Styling */
@@ -189,7 +250,7 @@ body, html {
 /* Responsive Design: 5 Sets of Screen Sizes */
 @media (max-width: 1200px) {
     .textbox img {
-        max-width: 120px;
+        max-width: 180px; /* Increased size of images */
     }
 }
 
@@ -198,9 +259,9 @@ body, html {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .textbox img {
-        max-width: 200px;
+        max-width: 200px; /* Increased size of images */
         margin-bottom: 20px;
     }
 }
@@ -210,36 +271,23 @@ body, html {
         padding: 20px;
     }
 
-    .navbar {
-        justify-content: center;
-        width: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(211, 211, 211, 0.5); /* Background for mobile */
-    }
-
-    .navbar a {
-        color: #000000;
-    }
-
-    .navbar a[href="#register"] {
-        color: #007bff;
-    }
-
     .landing-split {
         flex-direction: column;
+        padding-top: 70px; /* Adjust this value based on your navbar height */
     }
 
-    .split-left, .split-right {
+    .split-left,
+    .split-right {
         width: 100%;
         height: 50vh;
     }
 
     .logo {
-        top: 10px;
-        left: 10px;
-        transform: scale(0.8);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+        filter: brightness(1.5); /* Make the logo brighter */
     }
 }
 
@@ -262,21 +310,4 @@ body, html {
     .textbox-content {
         text-align: center;
     }
-}
-
-/* Animation for Background and Textbox */
-@keyframes textFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Apply Animation */
-.textbox {
-    animation: textFadeIn 1.5s ease-in-out 1s forwards;
 }
