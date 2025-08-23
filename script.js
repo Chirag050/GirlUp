@@ -4,7 +4,7 @@
 
       const form = e.target;
       const data = new FormData(form);
-      const action = "https://script.google.com/macros/s/AKfycbxXcX9OG5sjh2C6si0b_VaJUlQoc3IVMkOKxzhDI9K5kErRUO_GQvllRdIuylRkjZX50Q/exec";
+      const action = "https://script.google.com/macros/s/AKfycbxNFXaGPdOxVW5RNqZRyzyg7EXtP9wVYDMLTa1AQLjA-VhA7dYEY_N5YjX0wXk2K4cJiQ/exec";
 
       fetch(action, { method: "POST", body: data })
         .then(() => {
@@ -35,4 +35,5 @@
         }
       });
     });
+
 
