@@ -1,39 +1,26 @@
-  // Form submission to Google Apps Script
-    document.getElementById("girlupForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+const scriptURL = "https://script.google.com/macros/s/AKfycbzpojY0QdjRov1J65G47tCn8NUpXT_wHPAeT6AyB1AJhMA75WPSiTDpVpN8pIni_lYdBw/exec"; // Replace with your Apps Script deployment URL
+const form = document.getElementById("girlupForm");
+const status = document.getElementById("status");
 
-      const form = e.target;
-      const data = new FormData(form);
-      const action = "https://script.google.com/macros/s/AKfycbxNFXaGPdOxVW5RNqZRyzyg7EXtP9wVYDMLTa1AQLjA-VhA7dYEY_N5YjX0wXk2K4cJiQ/exec";
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  status.textContent = "⏳ Submitting...";
 
-      fetch(action, { method: "POST", body: data })
-        .then(() => {
-          document.getElementById("status").innerText = "✅ Thank you! Your response has been submitted.";
-          form.reset();
+  try {
+    const formData = new FormData(form);
+    const response = await fetch(scriptURL, { method: "POST", body: formData });
+    const result = await response.json();
 
-          // scroll to bottom after submit
-          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-        })
-        .catch(() => {
-          document.getElementById("status").innerText = "❌ Something went wrong. Please try again.";
-        });
-    });
-
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-
+    if (result.result === "duplicate") {
+      status.textContent = "⚠️ You have already submitted a response with this email.";
+    } else if (result.result === "success") {
+      status.textContent = "✅ Submitted successfully!";
+      form.reset();
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    } else {
+      status.textContent = "❌ Error: " + result.message;
+    }
+  } catch (err) {
+    status.textContent = "❌ Network error: " + err.message;
+  }
+});
