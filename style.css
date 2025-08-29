@@ -1,154 +1,263 @@
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f8f6ff;
-  color: #333;
-  text-align: center;
-  scroll-behavior: smooth;
-}
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f6ff;
+      color: #333;
+      text-align: center;
+      scroll-behavior: smooth;
+    }
 
-/* Hero */
-header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url("landing.jpg") no-repeat center/cover;
-  background-attachment: fixed;
-  color: white;
-  position: relative;
-}
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-}
-header * {
-  position: relative;
-  z-index: 1;
-}
-.hero-logo {
-  width: 140px;
-  border-radius: 50%;
-}
-.hero-title {
-  font-family: "Italianno", cursive;
-  font-size: 3rem;
-  margin: 15px 0;
-}
-.join-btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 1, 200, 0.7);
-  transition: all 0.3s ease;
-}
-.join-btn:hover {
-  box-shadow: 0 0 20px rgba(255, 8, 234, 0.9);
-}
+    /* Hero */
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: url("landing.jpg") no-repeat center center/cover;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+      z-index: 1;
+    }
 
-/* Sections */
-section {
-  padding: 60px 20px;
-  background: url("landing.jpg") no-repeat center/cover;
-  background-attachment: fixed;
-  color: white;
-  position: relative;
-}
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-}
-section * {
-  position: relative;
-  z-index: 1;
-}
-.box {
-  max-width: 900px;
-  margin: auto;
-  text-align: left;
-}
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-p {
-  text-align: justify;
-}
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
 
-/* Events */
-.events-table {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-.cell {
-  background: black;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-}
-.cell img {
-  width: 100%;
-  border-radius: 10px;
-}
+    header * {
+      position: relative;
+      z-index: 1;
+    }
 
-/* Form */
-form {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 12px;
-  max-width: 500px;
-  margin: auto;
-  text-align: left;
-}
-label {
-  display: block;
-  margin-bottom: 6px;
-}
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  border: none;
-}
-button {
-  background: linear-gradient(90deg, #7b2cbf, #9d4edd);
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-}
-button:hover {
-  background: linear-gradient(90deg, #5a189a, #7b2cbf);
-}
-#status {
-  margin-top: 10px;
-  text-align: center;
-}
+    .hero-logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
 
-/* Footer */
-footer {
-  background: #7b2cbf;
-  color: white;
-  padding: 10px;
-}
-.social-links a {
-  color: white;
-  font-size: 1.8rem;
-  margin: 0 12px;
-}
-.social-links a:hover {
-  color: #ffe066;
-}
+    .hero-title {
+
+      font-family: "Italianno", cursive;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 3rem;
+      margin: 15px 0;
+    }
+
+    /* Register Button */
+    .join-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: transparent;
+      border: none;
+      color: rgb(255, 255, 255);
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 1, 200, 0.726);
+      transition: all 0.3s ease;
+    }
+
+    .join-btn:hover {
+      box-shadow: 0 0 20px rgba(255, 8, 234, 0.8);
+    }
+
+    /* Section wrapper */
+    section {
+      padding: 60px 20px;
+      background: url("landing.jpg") no-repeat center center/cover;
+      background-attachment: fixed;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    section * {
+      position: relative;
+      z-index: 1;
+    }
+
+    section .box {
+      background: transparent;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: none;
+      text-align: left;
+    }
+
+    h2 {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: white;
+      text-align: justify;
+    }
+
+    /* Events grid */
+    .events-table {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .cell {
+      background: black;
+      border-radius: 12px;
+      box-shadow: none;
+      padding: 20px;
+      text-align: center;
+      /* Changed to center text */
+    }
+
+    .cell img {
+      width: 100%;
+      border-radius: 10px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+
+    .cell h3 {
+      color: white;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 1.5rem;
+      /* Added to center event names */
+    }
+
+    .cell p {
+      color: white;
+      font-size: 0.95rem;
+      text-align: center;
+      /* Changed to center text */
+    }
+
+    /* Join section */
+    #join {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Form */
+    form {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 500px;
+      /* width: 100%; */
+      margin: 0 auto;
+      box-shadow: none;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: white;
+    }
+
+    input,
+    textarea {
+      width: calc(100% - 24px);
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: linear-gradient(90deg, #7b2cbf, #9d4edd);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #5a189a, #7b2cbf);
+    }
+
+    /* Status */
+    #status {
+      margin-top: 15px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #7b2cbf;
+      color: white;
+      padding: 10px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    .social-links {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0 12px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffe066;
+    }
+
+    @media (max-width: 600px) {
+      .social-links a {
+        margin: 0 18px;
+        font-size: 2rem;
+      }
+    }

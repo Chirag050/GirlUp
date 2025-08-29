@@ -16,6 +16,7 @@ form.addEventListener("submit", async (e) => {
     } else if (result.result === "success") {
       status.textContent = "✅ Submitted successfully!";
       form.reset();
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     } else {
       status.textContent = "❌ Error: " + result.message;
     }
@@ -23,7 +24,6 @@ form.addEventListener("submit", async (e) => {
     status.textContent = "❌ Network error: " + err.message;
   }
 });
-
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
