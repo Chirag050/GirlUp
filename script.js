@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbyUn7oW64zpXRFFhqJGfDcp-Mm4vh2socyoKHgb7tWfEKl8aaPk8Ee7uEOSi-vcuuB70g/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzpojY0QdjRov1J65G47tCn8NUpXT_wHPAeT6AyB1AJhMA75WPSiTDpVpN8pIni_lYdBw/exec";
 const form = document.getElementById("girlupForm");
 const status = document.getElementById("status");
 
